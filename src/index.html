@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Exercise 3</title>
+<style>
+.styleDIV {
+          width: 100%;
+          padding: 50px 0;
+          text-align: center;
+          background-color: lightblue;
+          margin-top: 20px;
+          display: none
+        }
+.btn {
+	color: #ff0080;
+	font-weight: bold;
+	text-align: center;
+} 
+.btnOut {
+	color: black;	
+	font-weight: normal;
+	text-align: center;
+} 
+</style>
+</head>
+<body>
+	<div id="menu">
+	<button onclick="fAlert()" id = "button1" style="width: 10%" >Click</button>
+	<button onclick="fShowHideDiv()" id = "button2" style="width: 10%">Click</button>
+	<button onmouseover="fHoverAction()" onmouseout="fOutAction()" class="btnOut" id = "button3" style="width: 10%">Hover</button>
+	</div>
+	<div class="styleDIV" id="myDIV" style= "display: block;">This is my DIV element.
+	</div>
+
+</body>
+	<script>
+	// Your code goes here
+	function fAlert(){
+		alert("You clicked button 1");
+	}
+	function fShowHideDiv(){
+		var d = document.getElementById("myDIV");
+		if (d.style.display === "none") {
+			d.style.display = "block";			
+		} else {
+			d.style.display = "none";
+		}		
+	}
+	function fHoverAction(){
+		document.getElementById("button3").className = "btn"; 
+	}
+	function fOutAction(){
+		document.getElementById("button3").className = "btnOut"; 
+	}
+	</script>
+</html>
